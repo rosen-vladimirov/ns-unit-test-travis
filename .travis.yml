@@ -1,0 +1,31 @@
+language: android
+
+android:
+  components:
+    - platform-tools
+    - build-tools-23.0.1
+    - android-23
+    - extra-android-m2repository
+    - sys-img-armeabi-v7a-android-19
+
+cache:
+    directories:
+        - .nvm
+        - node_modules
+
+install:
+    - nvm install 4
+    - npm install ./nativescript.tgz
+
+before_script:
+    - export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start
+    - echo no | android create avd --force -n test -t android-19 -b armeabi-v7a
+    - emulator -avd test -no-audio -no-window &
+    - android-wait-for-emulator
+
+script:
+    - pwd
+    - ls -al node_modules/.bin
+    - cd app
+    - ../node_modules/.bin/tns test android --log trace
+    - echo "Final"
