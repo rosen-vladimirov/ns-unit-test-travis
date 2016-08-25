@@ -33,5 +33,5 @@ script:
     - ../node_modules/.bin/tns usage-reporting disable
     - ../node_modules/.bin/tns error-reporting disable
     - ../node_modules/.bin/tns run android --justlaunch
-    - ../node_modules/.bin/tns test android --log trace --justlaunch
+    - ../node_modules/.bin/tns test android
     - echo "Final"
