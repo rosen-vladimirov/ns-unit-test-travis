@@ -26,6 +26,6 @@ before_script:
 script:
     - pwd
     - ls -al node_modules/.bin
-    - cd app
+    - cd unit-test-proj
     - echo '' | ../node_modules/.bin/tns test android --log trace
     - echo "Final"
