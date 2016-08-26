@@ -18,7 +18,7 @@ cache:
 
 install:
     - nvm install 4
-    - npm install nativescript@2.0.0
+    - npm install nativescript@2.0.0 --ignore-scripts
 
 before_script:
     - export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start
