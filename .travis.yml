@@ -36,9 +36,9 @@ script:
     - ../node_modules/.bin/tns test android &
     - PID=$!
     - sleep 2m
-    - kill -HUP $PID
+    - kill -9 $PID
     - ../node_modules/.bin/tns device log &
     - PID=$!
     - ../node_modules/.bin/tns test android --justlaunch
-    - kill -HUP $PID
+    - kill -9 $PID
     - echo "Final"
