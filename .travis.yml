@@ -37,5 +37,6 @@ script:
     - PID=$!
     - sleep 2m
     - kill -9 $PID
-    - ../node_modules/.bin/tns test android --justlaunch --log trace
+    - ../node_modules/.bin/tns run android --justlaunch
+    - ../node_modules/.bin/tns test android --justlaunch
     - echo "Final"
