@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "nativescript-unit-test-runner": "file:nativescript-unit-test-runner",
-    "tns-core-modules": "2.0.0"
+    "tns-core-modules": "~2.2.0"
   },
   "devDependencies": {
     "babel-traverse": "6.14.0",
