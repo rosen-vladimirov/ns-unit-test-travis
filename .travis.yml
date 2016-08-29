@@ -33,10 +33,18 @@ script:
     - ../node_modules/.bin/tns usage-reporting disable
     - ../node_modules/.bin/tns error-reporting disable
     - ../node_modules/.bin/tns run android --justlaunch
+    - echo '### UNIT TEST RUNNER!!!!'
+    - cat ./node_modules/nativescript-unit-test-runner/config.js
+    - ls -l ./node_modules/nativescript-unit-test-runner
+    - echo '### END'
     - ../node_modules/.bin/tns test android &
     - PID=$!
     - sleep 2m
     - kill -9 $PID
+    - echo '### @@@@@@ UNIT TEST RUNNER!!!!'
+    - cat ./node_modules/nativescript-unit-test-runner/config.js
+    - ls -l ./node_modules/nativescript-unit-test-runner
+    - echo '### @@@@ END'
     - ../node_modules/.bin/tns run android --justlaunch
     - ../node_modules/.bin/tns test android --justlaunch
     - echo "Final"
