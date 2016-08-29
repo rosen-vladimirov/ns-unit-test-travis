@@ -44,7 +44,13 @@ script:
     - echo '### @@@@@@ UNIT TEST RUNNER!!!!'
     - cat ./node_modules/nativescript-unit-test-runner/config.js
     - ls -l ./node_modules/nativescript-unit-test-runner
+    - ls -l platforms/android/src/main/assets/app/tns_modules/nativescript-unit-test-runner/
     - echo '### @@@@ END'
     - ../node_modules/.bin/tns run android --justlaunch
+    - echo '### @@@@@@ %%%%%%%%%% UNIT TEST RUNNER!!!!'
+    - cat ./node_modules/nativescript-unit-test-runner/config.js
+    - ls -l ./node_modules/nativescript-unit-test-runner
+    - ls -l platforms/android/src/main/assets/app/tns_modules/nativescript-unit-test-runner/
+    - echo '### @@@@ %%%%%%%% END'
     - ../node_modules/.bin/tns test android --justlaunch
     - echo "Final"
