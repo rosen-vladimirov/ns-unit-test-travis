@@ -15,6 +15,7 @@ var BaseReporter = function (formatError, reportSlow, useColors, browserConsoleL
 
   this.renderBrowser = function (browser) {
     var results = browser.lastResult
+    console.log("results = ", results);
     var totalExecuted = results.success + results.failed
     var msg = util.format('%s: Executed %d of %d', browser, totalExecuted, results.total)
 
@@ -39,6 +40,7 @@ var BaseReporter = function (formatError, reportSlow, useColors, browserConsoleL
         helper.formatTimeInterval(results.netTime))
     }
 
+    console.log("MSG = ", msg);
     return msg
   }
 
@@ -77,6 +79,7 @@ var BaseReporter = function (formatError, reportSlow, useColors, browserConsoleL
   }
 
   this.onSpecComplete = function (browser, result) {
+    console.log("on spec complete: result = ", result);
     if (result.skipped) {
       this.specSkipped(browser, result)
     } else if (result.success) {

@@ -29,6 +29,7 @@ var DotsReporter = function (formatError, reportSlow, useColors, browserConsoleL
   }
 
   this.onBrowserComplete = function (browser) {
+    console.log("on browser complete!!!", browser);
     this.writeCommonMsg(this.renderBrowser(browser) + '\n')
   }
 

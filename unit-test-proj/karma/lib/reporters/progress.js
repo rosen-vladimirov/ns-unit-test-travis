@@ -49,7 +49,7 @@ var ProgressReporter = function (formatError, reportSlow, useColors, browserCons
 
   this._render = function () {
     this._isRendered = true
-
+console.log("render callled!!!!");
     return this._browsers.map(this.renderBrowser).join('\n') + '\n'
   }
 
