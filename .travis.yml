@@ -8,6 +8,9 @@ android:
     - extra-android-m2repository
     - sys-img-armeabi-v7a-android-19
 
+jdk:
+  - oraclejdk8
+
 cache:
     directories:
         - .nvm
@@ -15,7 +18,7 @@ cache:
 
 install:
     - nvm install 4
-    - npm install ./nativescript.tgz
+    - npm install ./nativescript.tgz --ignore-scripts
 
 before_script:
     - export DISPLAY=:99.0; sh -e /etc/init.d/xvfb start
@@ -26,6 +29,13 @@ before_script:
 script:
     - pwd
     - ls -al node_modules/.bin
-    - cd app
-    - ../node_modules/.bin/tns test android --log trace
+    - cd unit-test-proj
+    - ../node_modules/.bin/tns usage-reporting disable
+    - ../node_modules/.bin/tns error-reporting disable
+    - ../node_modules/.bin/tns test android --justlaunch
+    - echo '### @@@@@@ %%%%%%%%%% UNIT TEST RUNNER!!!!'
+    - cat ./node_modules/nativescript-unit-test-runner/config.js
+    - ls -l ./node_modules/nativescript-unit-test-runner
+    - ls -l platforms/android/src/main/assets/app/tns_modules/nativescript-unit-test-runner/
+    - echo '### @@@@ %%%%%%%% END'
     - echo "Final"

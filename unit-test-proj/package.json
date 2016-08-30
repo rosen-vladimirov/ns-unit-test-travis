@@ -4,16 +4,23 @@
   "readme": "NativeScript Application",
   "repository": "<fill-your-repository-here>",
   "nativescript": {
-    "id": "org.nativescript.unittestproj"
+    "id": "org.nativescript.unittestproj",
+    "tns-android": {
+      "version": "2.2.0"
+    }
   },
   "dependencies": {
-    "nativescript-unit-test-runner": "^0.3.3",
-    "tns-core-modules": "2.2.1"
+    "nativescript-unit-test-runner": "file:nativescript-unit-test-runner",
+    "tns-core-modules": "~2.2.0"
   },
   "devDependencies": {
+    "babel-traverse": "6.14.0",
+    "babel-types": "6.14.0",
+    "babylon": "6.9.1",
     "jasmine-core": "^2.4.1",
-    "karma": "^1.2.0",
+    "karma": "file:karma",
     "karma-jasmine": "^1.0.2",
-    "karma-nativescript-launcher": "^0.4.0"
+    "karma-nativescript-launcher": "file:karma-nativescript-launcher",
+    "lazy": "1.0.11"
   }
 }
